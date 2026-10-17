@@ -174,9 +174,9 @@ extract_ip() { grep -oE '"IP":"[0-9a-fA-F:.]+"' | head -n1 | cut -d'"' -f4; }
 tor_ip() { tor_json | extract_ip; }
 
 wait_tor_ready() {
-    local i ip
+    local ip
     info "Waiting for Tor to bootstrap..."
-    for i in $(seq 1 40); do
+    for _ in $(seq 1 40); do
         ip=$(tor_ip)
         [[ -n "$ip" ]] && return 0
         sleep 2
@@ -185,8 +185,7 @@ wait_tor_ready() {
 }
 
 direct_is_tor() {
-    local i
-    for i in 1 2 3; do
+    for _ in 1 2 3; do
         direct_json | grep -q '"IsTor":true' && return 0
         sleep 2
     done
@@ -194,8 +193,8 @@ direct_is_tor() {
 }
 
 wait_new_ip() {
-    local old="$1" new="" t
-    for t in $(seq 1 10); do
+    local old="$1" new=""
+    for _ in $(seq 1 10); do
         sleep 3
         new=$(tor_ip)
         if [[ -n "$new" && "$new" != "$old" ]]; then
