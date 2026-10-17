@@ -1,6 +1,6 @@
 # torvpn
 
-[![shellcheck](https://github.com/<your-username>/torvpn/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/<your-username>/torvpn/actions/workflows/shellcheck.yml)
+[![shellcheck](https://github.com/tanmay1802-art/Tor-Vpn/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/tanmay1802-art/Tor-Vpn/actions/workflows/shellcheck.yml)
 ![license](https://img.shields.io/badge/license-MIT-blue)
 ![shell](https://img.shields.io/badge/shell-bash-green)
 
@@ -122,8 +122,8 @@ sudo apt install -y git tor iptables curl procps
 ### 2. Get the code
 
 ```bash
-git clone https://github.com/<your-username>/torvpn.git
-cd torvpn
+git clone https://github.com/tanmay1802-art/Tor-Vpn.git
+cd Tor-Vpn
 chmod +x torvpn.sh
 ```
 
@@ -334,7 +334,7 @@ sudo journalctl -u tor@default -e
 ## Repository layout
 
 ```
-torvpn/
+Tor-Vpn/
 ├── torvpn.sh                        # the tool (single file)
 ├── README.md
 ├── LICENSE
